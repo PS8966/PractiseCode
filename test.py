@@ -15,3 +15,13 @@ list_check.insert(1, "puppet")
 list_check.pop(3)
 for item in list_check:
     print(item)
+#----------------------------------------------------
+host_port = (80,8080) # tuple
+print(f"host ports: {host_port[1]}")
+servers = { "s1" , "s2" , "s3"}
+servers2 = { "s3", "s4"} # sets
+print(type(servers))
+ports = { (80,8080), (5985,5986,22)} # set of tuples
+print((80, 443) in ports) # checking if tuple is in the set
+print(f"printing union of sets {ports.union(servers)}")
+print(f"printing intersection of sets {servers.intersection(servers2)}")
