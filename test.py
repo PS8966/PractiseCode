@@ -25,3 +25,16 @@ ports = { (80,8080), (5985,5986,22)} # set of tuples
 print((80, 443) in ports) # checking if tuple is in the set
 print(f"printing union of sets {ports.union(servers)}")
 print(f"printing intersection of sets {servers.intersection(servers2)}")
+#-----------------------------------------------------
+dict1 = {
+    "p1": "azure",
+    "p2": "aws",
+    "region": "uswest"
+}
+dict2 = { "region": "useast"}
+print(dict1 | dict2) # union will ovewrite the value of region of dict1
+dict1["p1"] = "gcp" # updating key value
+dict2["cost_center"] = "33" # adding new key value to dict
+print(f"dict1: {dict1} dict2: {dict2}")
+for value in dict1.values():
+    print(value)
