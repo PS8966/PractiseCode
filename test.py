@@ -38,3 +38,24 @@ dict2["cost_center"] = "33" # adding new key value to dict
 print(f"dict1: {dict1} dict2: {dict2}")
 for value in dict1.values():
     print(value)
+#----------------------------------------------------------------------------
+import socket
+# str1 is position parameter and str2 is keyword output will be terraform and chef
+def check_fun(host,port=22,timeout=5):
+        print(f" host: {host}  port: {port}")
+        try:
+             with socket.create_connection((host,port), timeout):
+              print("pass")
+              return True
+        except Exception as e:
+             print(f"error: {e}")
+             
+check_fun("www.google.com")
+
+# Range function
+for server in range(5): # 0 to 4
+     print(server)
+for server1 in range(5,8): # 5 - 7
+     print(server1)
+for server2 in range(5,30,5): # 5 to 30 with space of 5 
+     print(server2)
