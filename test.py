@@ -59,3 +59,15 @@ for server1 in range(5,8): # 5 - 7
      print(server1)
 for server2 in range(5,30,5): # 5 to 30 with space of 5 
      print(server2)
+
+#----------------------------------------
+servers = ["web1", "web2", "web3"]
+ips = ["10.0.0.1", "10.0.0.2", "10.0.0.3"]
+if servers[1] == "web2":
+    print("condition met")
+# to iterate over index and item 
+for ind, server in enumerate(servers):
+    print(f"index: {ind} item: {server}")
+# to zip lists and iterate over it 
+for server, ip in zip(servers, ips):
+    print(f"server: {server} ip: {ip}")
