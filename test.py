@@ -107,3 +107,31 @@ print(sum)
 ports = [22,443,5046,5985]
 priviledge_ports = list(filter(lambda port: port < 1024, ports)) # filter(function , iterable)
 print(priviledge_ports)
+
+#-------------------------------------------
+
+#Iterators provide sequential access to elements and are memory-efficient.
+#Iterators
+#An iterator is an object that allows sequential traversal through elements of an iterable (like lists, tuples, or sets) without exposing the underlying structure. It uses the iter() and next() functions and follows lazy evaluation, meaning it computes values only when needed.
+#Example:
+
+# Creating an iterator
+iter_list = iter(['Python', 'is', 'awesome'])
+print(next(iter_list)) # Output: Python
+print(next(iter_list)) # Output: is
+print(next(iter_list)) # Output: awesome
+
+# Creating a generator
+def square_numbers(n):
+for i in range(1, n + 1):
+yield i * i
+
+gen = square_numbers(3)
+
+print(next(gen)) # Output: 1
+print(next(gen)) # Output: 4
+print(next(gen)) # Output: 9
+#Generators simplify iterator creation and are ideal for large datasets.
+#Iterators are implemented using classes, while generators use functions.
+#erators use yield to produce values, whereas iterators use iter() and next().
+#Decorators enhance or modify the behavior of functions dynamically.
