@@ -71,3 +71,39 @@ for ind, server in enumerate(servers):
 # to zip lists and iterate over it 
 for server, ip in zip(servers, ips):
     print(f"server: {server} ip: {ip}")
+#----------------------------------------------------------
+
+def example_func(*args, **kwargs):
+ print("Positional arguments:", args) # tuple
+ print("Keyword arguments:", kwargs) # dict
+
+example_func(1, 2, 3, name="Alice", age=25)
+
+#Calling functions by *args **kwargs
+try:
+  def check_call(host, port, timeout=10 ):
+    print(f"{host} {timeout} {port}")
+  params = ["host1", "22", "5", "False"]
+  check_call(*params[:2]) #will update first two values of the params only
+except Exception as e:
+  print(e)
+
+def fun_call( name, service, version=1.0 ): 
+  print(f"name: {name} service: {service} version: {version}")
+extra_params = {"name": "h1", "service": "httpd","version": "1.2" }
+fun_call(**extra_params) #unpacking of the keyword args
+
+#---- lamda function -------
+
+square = lambda x: x*x #lambda arguments: expression
+print(square(3))
+print((lambda x: x*x)(3))
+
+#transforming data with map
+numbers = [1,2,3,4]
+sum = list(map(lambda x: x+2, numbers)) #map(function, iterable)
+print(sum)
+
+ports = [22,443,5046,5985]
+priviledge_ports = list(filter(lambda port: port < 1024, ports)) # filter(function , iterable)
+print(priviledge_ports)
