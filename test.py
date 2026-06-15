@@ -135,3 +135,19 @@ print(next(gen)) # Output: 9
 #Iterators are implemented using classes, while generators use functions.
 #erators use yield to produce values, whereas iterators use iter() and next().
 #Decorators enhance or modify the behavior of functions dynamically.
+
+from pathlib import Path
+config_dir = Path('.')
+filename = 'check.txt'
+config_path = config_dir/filename
+print(config_path.resolve()) # to print the whole path
+print(config_path.exists()) # to check if file exist at this path
+service_path = Path('/etc')
+print(f" is file: {service_path.is_file()}, is dir {service_path.is_dir()}")
+
+#------------
+from pathlib import Path
+test_dir = Path('..')
+for i, child in enumerate(test_dir.iterdir()): # iterate over items in the dir 
+    print(f"  {child.name}")
+    if i<=4: break
